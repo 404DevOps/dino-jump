@@ -46,11 +46,8 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-
         if (collision.gameObject.CompareTag("Good"))
         {
-            Debug.Log("Collision with Gameobject: " + collision.gameObject.name);
             isGrounded = true;
         }
        
@@ -61,6 +58,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("DeathBox"))
         {
             GameManager.Instance.GameOver();
+            //Destroy(gameObject);
         }
     }
 }

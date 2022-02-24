@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlatformBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
+        var deathBoxY = GameObject.FindGameObjectWithTag("DeathBox").transform.position.y;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (transform.position.y < (deathBoxY - 2))
+        {
+            Destroy(gameObject);
+        }
     }
 }

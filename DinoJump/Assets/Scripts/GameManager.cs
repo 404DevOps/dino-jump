@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public List<PlayerData> PlayerList {get; private set;}
+    //public List<PlayerData> PlayerList {get; private set;}
     public static bool isGameActive;
     public static GameManager Instance { get; private set; }
     public  float Score = 0f;
@@ -41,16 +41,23 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void AddNewPlayer(string name, Color color)
+    public void StartGame()
     {
-        PlayerData newPlayer = new PlayerData();
-        newPlayer.Name = name;
-        newPlayer.Color = color;
-        newPlayer.playerState = PlayerState.NotReady;
-        PlayerList.Add(newPlayer);
-
-        Debug.Log("Player Added");
+        //if all players ready
+        isGameActive = true;
+        SceneManager.LoadScene(2);
     }
+
+    //public void AddNewPlayer(string name, Color color)
+    //{
+    //    PlayerData newPlayer = new PlayerData();
+    //    newPlayer.Name = name;
+    //    newPlayer.Color = color;
+    //    newPlayer.playerState = PlayerState.NotReady;
+    //    PlayerList.Add(newPlayer);
+
+    //    Debug.Log("Player Added");
+    //}
 
     public void GameOver()
     {
@@ -80,31 +87,41 @@ public class GameManager : MonoBehaviour
 
     public float GetHighestPlayerPosition()
     {
-        if (PlayerList?.Count < 1)
+        //if (PlayerList?.Count < 1)
+        //{
+        //    return 0;
+        //}
+        //else 
+        //{
+        //    return PlayerList.Max(m => m.transform.position.y);
+        //}
+        var player = GameObject.Find("Player");
+        if (player != null)
+        {
+            return player.transform.position.y;
+        }
+        else
         {
             return 0;
-        }
-        else 
-        {
-            return PlayerList.Max(m => m.transform.position.y);
+
         }
     }
 
     void UpdatePlayerList()
     {
-        //empty the list to not get duplicates
-        PlayerList = new List<PlayerData>();
+        ////empty the list to not get duplicates
+        //PlayerList = new List<PlayerData>();
 
-        //find all players
-        var list = FindObjectsOfType<PlayerController>();
-        foreach (var item in list)
-        {
-            //add to global list
-            PlayerList.Add(item.GetComponent<PlayerData>());
-        }
-        if (PlayerList?.Count < 1)
-        {
-            //GameOver();
-        }
+        ////find all players
+        //var list = FindObjectsOfType<PlayerController>();
+        //foreach (var item in list)
+        //{
+        //    //add to global list
+        //    PlayerList.Add(item.GetComponent<PlayerData>());
+        //}
+        //if (PlayerList?.Count < 1)
+        //{
+        //    //GameOver();
+        //}
     }
 }

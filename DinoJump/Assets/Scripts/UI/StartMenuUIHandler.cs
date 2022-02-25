@@ -29,13 +29,13 @@ public class StartMenuUIHandler : MonoBehaviour
         if (lobbyCodeInput != null && playerNameInput != null)
         {
             AddPlayer();
-            GameManager.Instance.PlayerList.Add(new PlayerData());
+            //GameManager.Instance.PlayerList.Add(new PlayerData());
             GameManager.Instance.JoinLobby(lobbyCodeInput.text);
         }
     }
 
     void AddPlayer()
     {
-        GameManager.Instance.AddNewPlayer(playerNameInput.text, new Color());
+        //GameManager.Instance.AddNewPlayer(playerNameInput.text, new Color());
     }
 }

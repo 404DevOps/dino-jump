@@ -10,6 +10,7 @@ public class ScoreUIHandler : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Score Update in UIHandler");
         scoreText.text = "Score: " + GameManager.Instance.Score;
     }
 }

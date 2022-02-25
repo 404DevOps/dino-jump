@@ -25,20 +25,21 @@ public class LobbyUIHandler : MonoBehaviour
 
     public void OnPlayerReadyClick()
     {
-        var player = GameManager.Instance.PlayerList.FirstOrDefault();
-        player.playerState = PlayerState.Ready;
+        GameManager.Instance.StartGame();
+        //var player = GameManager.Instance.PlayerList.FirstOrDefault();
+        //player.playerState = PlayerState.Ready;
     }
 
     void FillScrollView()
     {
-        if (GameManager.Instance != null && GameManager.Instance.PlayerList != null)
-        {
-            foreach (var player in GameManager.Instance.PlayerList)
-            {
-                playersText.text += player.gameObject.name + Environment.NewLine;
-                //scrollView.GetComponent<ScrollView>().Add(new VisualElement() { name = "asd" });
-            }
-        }
+        //if (GameManager.Instance != null && GameManager.Instance.PlayerList != null)
+        //{
+        //    foreach (var player in GameManager.Instance.PlayerList)
+        //    {
+        //        playersText.text += player.gameObject.name + Environment.NewLine;
+        //        //scrollView.GetComponent<ScrollView>().Add(new VisualElement() { name = "asd" });
+        //    }
+        //}
     }
 
     void SetLobbyCode()

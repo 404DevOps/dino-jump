@@ -25,9 +25,10 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnPlatform()
     {
-        if (GameManager.Instance.PlayerList != null)
-        {
-            if (GameManager.Instance.PlayerList.Any(m => m.gameObject.transform.position.y > spawnPosY - 6))
+        //if (GameManager.Instance.PlayerList != null)
+        //{
+            //if (GameManager.Instance.PlayerList.Any(m => m.gameObject.transform.position.y > spawnPosY - 6))
+            if(GameObject.Find("Player").transform.position.y > spawnPosY -6)
             {
                 spawnPosY += 2.0f;
                 float spawnPosX = Random.Range(-spawnRange, spawnRange);
@@ -42,6 +43,6 @@ public class SpawnManager : MonoBehaviour
 
                 lastPlatformSpawned = randomPlat;
             }
-        }
+        //}
     }
 }

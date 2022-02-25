@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        gameObject.transform.SetParent(null);
         playerRb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
 

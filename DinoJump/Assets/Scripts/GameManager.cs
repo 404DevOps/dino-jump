@@ -8,10 +8,11 @@ public class GameManager : MonoBehaviour
 {
     private float spawnRange = 5.0f;//10.6f;
 
-    [SerializeField] private GameObject platformPrefab;
+    [SerializeField] private List<GameObject> platformPrefab;
     [SerializeField] private GameObject GameOverText;
     [SerializeField] private GameObject ScoreText;
     [SerializeField] private GameObject DeathBox;
+    private int lastPlatformSpawned;
 
     public static List<GameObject> PlayerList {get; private set;}
 
@@ -99,8 +100,16 @@ public class GameManager : MonoBehaviour
         {
             spawnPosY += 2.0f;
             float spawnPosX = Random.Range(-spawnRange, spawnRange);
+            int randomPlat = Random.Range(0, platformPrefab.Count);
+
+            while (randomPlat != 0 && randomPlat == lastPlatformSpawned)
+            {
+                randomPlat = Random.Range(0, platformPrefab.Count);
+            }
             //Select Random Prefab from List
-            Instantiate(platformPrefab, new Vector2(spawnPosX, spawnPosY), platformPrefab.transform.rotation);
+            Instantiate(platformPrefab[randomPlat], new Vector2(spawnPosX, spawnPosY), platformPrefab[randomPlat].transform.rotation);
+
+            lastPlatformSpawned = randomPlat;
         }
     }
 }

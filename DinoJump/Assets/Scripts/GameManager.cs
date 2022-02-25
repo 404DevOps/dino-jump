@@ -3,23 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private float spawnRange = 5.0f;//10.6f;
-
-    [SerializeField] private List<GameObject> platformPrefab;
-    [SerializeField] private GameObject GameOverText;
-    [SerializeField] private GameObject ScoreText;
-    [SerializeField] private GameObject DeathBox;
-    private int lastPlatformSpawned;
-
-    public static List<GameObject> PlayerList {get; private set;}
-
+    public List<PlayerData> PlayerList {get; private set;}
     public static bool isGameActive;
     public static GameManager Instance { get; private set; }
-    private float spawnPosY = -4.0f;
-    private float score = 0f;
+    public  float Score = 0f;
+    public string LobbyCode;
 
     // Start is called before the first frame update
     void Start()
@@ -29,39 +21,61 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        isGameActive = true;
+        //isGameActive = true;
         Instance = this;
 
-        UpdatePlayerList();
-        SpawnPlatform();
-        
+        DontDestroyOnLoad(gameObject);
+
+        UpdatePlayerList();        
+    }
+
+    internal void NewLobby(string code)
+    {
+        LobbyCode = code;
+        SceneManager.LoadScene(1);
+    }
+
+    internal void JoinLobby(string code)
+    {
+        LobbyCode = code;
+        SceneManager.LoadScene(1);
+    }
+
+    public void AddNewPlayer(string name, Color color)
+    {
+        PlayerData newPlayer = new PlayerData();
+        newPlayer.Name = name;
+        newPlayer.Color = color;
+        newPlayer.playerState = PlayerState.NotReady;
+        PlayerList.Add(newPlayer);
+
+        Debug.Log("Player Added");
     }
 
     public void GameOver()
     {
         isGameActive = false;
-        GameOverText.SetActive(true);
-        //Show EndScreen
+        SceneManager.LoadScene(3);
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdatePlayerList();
-        SpawnPlatform();
-        UpdateScore();
+        if (isGameActive)
+        {
+            UpdatePlayerList();
+            UpdateScore();
+        }
     }
 
     void UpdateScore()
     {
         float pos = GetHighestPlayerPosition() + 4.0f;
         var currentHeight = pos * 10;
-        if (currentHeight > score)
+        if (currentHeight > Score)
         {
-            score = Mathf.Round( pos * 10);
+            Score = Mathf.Round( pos * 10);
         }
-        
-        ScoreText.GetComponent<Text>().text = "Score: " + score + "m";
     }
 
     public float GetHighestPlayerPosition()
@@ -79,37 +93,18 @@ public class GameManager : MonoBehaviour
     void UpdatePlayerList()
     {
         //empty the list to not get duplicates
-        PlayerList = new List<GameObject>();
+        PlayerList = new List<PlayerData>();
 
         //find all players
         var list = FindObjectsOfType<PlayerController>();
         foreach (var item in list)
         {
             //add to global list
-            PlayerList.Add(item.gameObject);
+            PlayerList.Add(item.GetComponent<PlayerData>());
         }
         if (PlayerList?.Count < 1)
         {
-            GameOver();
-        }
-    }
-
-    void SpawnPlatform()
-    {
-        if (PlayerList.Any(m => m.gameObject.transform.position.y > spawnPosY - 6))
-        {
-            spawnPosY += 2.0f;
-            float spawnPosX = Random.Range(-spawnRange, spawnRange);
-            int randomPlat = Random.Range(0, platformPrefab.Count);
-
-            while (randomPlat != 0 && randomPlat == lastPlatformSpawned)
-            {
-                randomPlat = Random.Range(0, platformPrefab.Count);
-            }
-            //Select Random Prefab from List
-            Instantiate(platformPrefab[randomPlat], new Vector2(spawnPosX, spawnPosY), platformPrefab[randomPlat].transform.rotation);
-
-            lastPlatformSpawned = randomPlat;
+            //GameOver();
         }
     }
 }

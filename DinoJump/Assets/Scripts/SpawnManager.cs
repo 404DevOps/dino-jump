@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    private float spawnRange = 5.0f;//10.6f;
+    private float spawnRange = 5f;//10.6f;
 
     [SerializeField] private List<GameObject> platformPrefab;
     private int lastPlatformSpawned;
@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
         //if (GameManager.Instance.PlayerList != null)
         //{
             //if (GameManager.Instance.PlayerList.Any(m => m.gameObject.transform.position.y > spawnPosY - 6))
-            if(GameObject.Find("Player").transform.position.y > spawnPosY -6)
+            if(GameObject.Find("Player").transform.position.y > spawnPosY -10)
             {
                 spawnPosY += 2.0f;
                 float spawnPosX = Random.Range(-spawnRange, spawnRange);

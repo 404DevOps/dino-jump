@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637816812802652401
-    m_Hash: 946117725
+      ticks: 637816858976876966
+    m_Hash: 3297847044
   m_LockFileStatus:
     m_FilePath: F:/Documents/404DevOps/_UnityProjects/DinoJump/dino-jump/DinoJump/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637816812810943970
-    m_Hash: 2742228198
+      ticks: 637816858977196967
+    m_Hash: 3925160794
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,12 +22,137 @@ m_LocalPackages:
 m_ProjectPath: F:/Documents/404DevOps/_UnityProjects/DinoJump/dino-jump/DinoJump/Packages
 m_EditorVersion: 2021.2.13f1 (90b6766da538)
 m_ResolvedPackages:
-- packageId: com.unity.collab-proxy@1.15.13
+- packageId: com.unity.2d.pixel-perfect@5.0.1
   testable: 0
   isDirectDependency: 1
-  version: 1.15.13
+  version: 5.0.1
   source: 1
-  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.collab-proxy@1.15.13
+  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.2d.pixel-perfect@5.0.1
+  assetPath: Packages/com.unity.2d.pixel-perfect
+  name: com.unity.2d.pixel-perfect
+  displayName: 2D Pixel Perfect
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: 'The 2D Pixel Perfect package contains the Pixel Perfect Camera component
+    which ensures your pixel art remains crisp and clear at different resolutions,
+    and stable in motion.
+
+
+    It is a single component that makes all the calculations
+    needed to scale the viewport with resolution changes, removing the hassle from
+    the user. The user can adjust the definition of the pixel art rendered within
+    the camera viewport through the component settings, as well preview any changes
+    immediately in Game view by using the Run in Edit Mode feature.'
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.0-preview
+    - 1.0.1-preview
+    - 2.0.2
+    - 2.0.3
+    - 2.0.4
+    - 2.1.0
+    - 3.0.0
+    - 3.0.1
+    - 3.0.2
+    - 4.0.0
+    - 4.0.1
+    - 5.0.0-pre.1
+    - 5.0.0-pre.2
+    - 5.0.0
+    - 5.0.1
+    compatible:
+    - 5.0.1
+    verified: 5.0.1
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - pixel
+  - perfect
+  - 2D
+  - sprite
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637637493430000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/2d.git
+    revision: 404f29a83b5666c45c2386a031f1f653fc6fd00d
+    path: 
+  unityLifecycle:
+    version: 5.0.1
+    nextVersion: 
+- packageId: com.unity.2d.sprite@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.2d.sprite@1.0.0
+  assetPath: Packages/com.unity.2d.sprite
+  name: com.unity.2d.sprite
+  displayName: 2D Sprite
+  author:
+    name: 
+    email: 
+    url: 
+  category: 2D
+  type: 
+  description: Use Unity Sprite Editor Window to create and edit Sprite asset properties
+    like pivot, borders and Physics shape
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    verified: 1.0.0
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - 2d
+  - sprite
+  - sprite editor window
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+- packageId: com.unity.collab-proxy@1.15.12
+  testable: 0
+  isDirectDependency: 1
+  version: 1.15.12
+  source: 1
+  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.collab-proxy@1.15.12
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -139,13 +264,13 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637807003040000000
+  datePublishedTicks: 637789721280000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 825774911ad2d1440ac844c9be1ae2c9b5dc7966
+    revision: 5ca1fd4ca9f999e087d19e98afaf99905a582771
     path: 
   unityLifecycle:
     version: 1.15.12
@@ -277,7 +402,7 @@ m_ResolvedPackages:
     version: 1.1.9
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.1.31
+    version: 1.1.29
   - name: com.unity.ext.nunit
     version: 1.0.6
   - name: com.unity.modules.imgui
@@ -366,12 +491,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.2.5
     nextVersion: 
-- packageId: com.unity.test-framework@1.1.31
+- packageId: com.unity.test-framework@1.1.29
   testable: 0
   isDirectDependency: 1
-  version: 1.1.31
+  version: 1.1.29
   source: 1
-  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.test-framework@1.1.31
+  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.test-framework@1.1.29
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -454,13 +579,13 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637804266210000000
+  datePublishedTicks: 637647922650000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: https://github.com/Unity-Technologies/com.unity.test-framework.git
-    revision: 438b0defc147c9be5c969ca79ff03a722b4590ed
+    url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
+    revision: dac53542acdab7a12e9ebf111ac588d0e53cf483
     path: 
   unityLifecycle:
     version: 1.1.29
@@ -767,12 +892,74 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.6.4
     nextVersion: 
-- packageId: com.unity.visualscripting@1.7.7
+- packageId: com.unity.ugui@1.0.0
   testable: 0
   isDirectDependency: 1
-  version: 1.7.7
+  version: 1.0.0
+  source: 2
+  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.ugui@1.0.0
+  assetPath: Packages/com.unity.ugui
+  name: com.unity.ugui
+  displayName: Unity UI
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: "Unity UI is a set of tools for developing user interfaces for games
+    and applications. It is a GameObject-based UI system that uses Components and
+    the Game View to arrange, position, and style user interfaces. \u200B You cannot
+    use Unity UI to create or change user interfaces in the Unity Editor."
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    verified: 1.0.0
+  dependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  keywords:
+  - UI
+  - ugui
+  - Unity UI
+  - Canvas
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+- packageId: com.unity.visualscripting@1.7.6
+  testable: 0
+  isDirectDependency: 1
+  version: 1.7.6
   source: 1
-  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.visualscripting@1.7.7
+  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.visualscripting@1.7.6
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -841,13 +1028,13 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637798354510000000
+  datePublishedTicks: 637722460580000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.visualscripting.git
-    revision: 21e90c37a6500e62ae5a293cadf995e74d5f6905
+    revision: 64599611822e37717efdd2fa1a0576e1984155fc
     path: 
   unityLifecycle:
     version: 1.7.6
@@ -2591,68 +2778,6 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 
-    nextVersion: 
-- packageId: com.unity.ugui@1.0.0
-  testable: 0
-  isDirectDependency: 0
-  version: 1.0.0
-  source: 2
-  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.ugui@1.0.0
-  assetPath: Packages/com.unity.ugui
-  name: com.unity.ugui
-  displayName: Unity UI
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: 
-  description: "Unity UI is a set of tools for developing user interfaces for games
-    and applications. It is a GameObject-based UI system that uses Components and
-    the Game View to arrange, position, and style user interfaces. \u200B You cannot
-    use Unity UI to create or change user interfaces in the Unity Editor."
-  status: 4
-  errors: []
-  versions:
-    all:
-    - 1.0.0
-    compatible:
-    - 1.0.0
-    verified: 1.0.0
-  dependencies:
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  resolvedDependencies:
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  keywords:
-  - UI
-  - ugui
-  - Unity UI
-  - Canvas
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 0
-  documentationUrl: 
-  hasRepository: 0
-  repository:
-    type: 
-    url: 
-    revision: 
-    path: 
-  unityLifecycle:
-    version: 1.0.0
     nextVersion: 
 - packageId: com.unity.ext.nunit@1.0.6
   testable: 0

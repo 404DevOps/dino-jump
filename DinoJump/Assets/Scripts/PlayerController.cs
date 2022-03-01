@@ -10,12 +10,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float horizontalInput;
 
+    private SpriteRenderer spriteRenderer;
+    private Animator playerAnimator;
     private bool isGrounded = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         playerRb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -25,23 +30,37 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
-            isGrounded = false;
         }
         if (horizontalInput != 0f)
         {
+            playerAnimator.SetBool("isWalking", true);
             Move();
         }
-        
+        else 
+        {
+            playerAnimator.SetBool("isWalking", false);
+        }
     }
 
     void Jump()
     {
         gameObject.transform.SetParent(null);
         playerRb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        playerAnimator.SetBool("isJumping", true);
+        isGrounded = false;
     }
 
     void Move()
     {
+        if (horizontalInput > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if(horizontalInput < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+
         transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
     }
 
@@ -50,6 +69,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Good"))
         {
             isGrounded = true;
+            playerAnimator.SetBool("isJumping", false);
         }
        
     }

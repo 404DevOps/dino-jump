@@ -3,18 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class LobbyUIHandler : MonoBehaviour
 {
-    [SerializeField] GameObject scrollView;
-    [SerializeField] UnityEngine.UIElements.Button readyButton;
-    [SerializeField] Text LobbyCodeText;
-    [SerializeField] Text playersText;
+    Button readyButton;
+    Label lobbyCodeText;
+    VisualElement playersList;
     // Start is called before the first frame update
     void Start()
     {
+        var root = GetComponent<UIDocument>().rootVisualElement;
+        readyButton = root.Q<Button>("ready-button");
+        lobbyCodeText = root.Q<Label>("lobby-code");
+        playersList = root.Q<VisualElement>("player-list");
+
+        var label1 = new Label("Player1");
+        label1.AddToClassList("player-list-label");
+
+        var label2 = new Label("Player2");
+        label2.AddToClassList("player-list-label");
+
+        playersList.Add(label1);
+        playersList.Add(label2);
+
+        readyButton.clicked += OnPlayerReadyClick;
+
         SetLobbyCode();
     }
 
@@ -26,6 +40,7 @@ public class LobbyUIHandler : MonoBehaviour
     public void OnPlayerReadyClick()
     {
         GameManager.Instance.StartGame();
+        gameObject.SetActive(false);
         //var player = GameManager.Instance.PlayerList.FirstOrDefault();
         //player.playerState = PlayerState.Ready;
     }
@@ -46,7 +61,7 @@ public class LobbyUIHandler : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            LobbyCodeText.text = GameManager.Instance.LobbyCode;
+            lobbyCodeText.text = GameManager.Instance.LobbyCode;
         }
     }
 }

@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Main.uss?fileID=7433441132597879392&amp;guid=8da714183b0dcb4469883cb38bd1c768&amp;type=3#Main" />
+    <ui:VisualElement class="container">
+        <ui:Label text="Game Over" display-tooltip-when-elided="true" name="game-over-text" class="title-label" />
+        <ui:VisualElement name="score-container" style="margin-left: 50px; margin-right: 50px; margin-top: 50px; margin-bottom: 50px;">
+            <ui:Label text="Your Score: 0" display-tooltip-when-elided="true" name="score-text" class="score-text" />
+            <ui:Label text="Your Rank: -" display-tooltip-when-elided="true" name="rank-text" enable-rich-text="false" class="score-text" />
+        </ui:VisualElement>
+        <ui:Button text="Return to Lobby" display-tooltip-when-elided="true" name="return-lobby-button" enable-rich-text="false" class="ready-button" />
+    </ui:VisualElement>
+</ui:UXML>

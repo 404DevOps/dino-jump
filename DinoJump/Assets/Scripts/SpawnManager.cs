@@ -14,13 +14,15 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnPlatform();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnPlatform();
+        if (GameManager.Instance.isGameActive)
+        {
+            SpawnPlatform();
+        }
     }
 
     void SpawnPlatform()

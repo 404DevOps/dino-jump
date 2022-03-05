@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class ScoreUIHandler : MonoBehaviour
 {
-    [SerializeField]
-    private Text scoreText;
+    private Label scoreText;
+
+    private void Start()
+    {
+        var root = GetComponent<UIDocument>().rootVisualElement;
+        scoreText = root.Q<Label>("score-text");
+    }
 
     void Update()
     {
-        Debug.Log("Score Update in UIHandler");
         scoreText.text = "Score: " + GameManager.Instance.Score;
     }
 }

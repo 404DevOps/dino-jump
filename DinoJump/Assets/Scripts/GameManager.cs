@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //public List<PlayerData> PlayerList {get; private set;}
-    public static bool isGameActive;
+    public bool isGameActive;
     public static GameManager Instance { get; private set; }
-    public  float Score = 0f;
+    public float Score = 0f;
     public string LobbyCode;
 
     // Start is called before the first frame update
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         //if all players ready
         isGameActive = true;
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
     }
 
     //public void AddNewPlayer(string name, Color color)
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     // Update is called once per frame

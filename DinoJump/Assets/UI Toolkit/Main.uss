@@ -13,7 +13,7 @@
 
 .player-list-label {
     font-size: 20px;
-    color: rgba(255, 57, 57, 255);
+    color: rgb(255, 57, 57);
 }
 
 .title-label {
@@ -28,12 +28,12 @@
 .container {
     margin-left: 280px;
     margin-right: 280px;
-    background-color: rgba(101, 99, 99, 0.35);
+    background-color: rgba(56, 56, 56, 0);
     flex-grow: 1;
 }
 
 .score-text {
-    color: rgba(3, 255, 0, 255);
+    color: rgb(3, 255, 0);
     font-size: 25px;
     -unity-text-align: upper-center;
 }

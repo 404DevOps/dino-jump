@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var highestPlayerPosition = GameManager.Instance.GetHighestPlayerPosition();
+        var highestPlayerPosition = GameManager.Instance.GetHighestPosition();
         {
             if (highestPlayerPosition > transform.position.y)
             {

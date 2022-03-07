@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetBool("isWalking", false);
         }
+
+        CheckDeath();
     }
 
     void Jump()
@@ -80,6 +82,15 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.GameOver();
             //Destroy(gameObject);
+        }
+    }
+
+    private void CheckDeath()
+    {
+        var deathBox = GameObject.Find("DeathBox");
+        if (transform.position.y < deathBox.transform.position.y)
+        {
+            GameManager.Instance.GameOver();
         }
     }
 }

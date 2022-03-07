@@ -7,16 +7,14 @@ using UnityEngine.UIElements;
 public class GameOverUIHandler : MonoBehaviour
 {
     Label scoreText;
-    Label rankText;
     Button backToLobby;
     // Start is called before the first frame update
     void Start()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
         scoreText = root.Q<Label>("score-text");
-        rankText = root.Q<Label>("rank-text");
-        backToLobby = root.Q<Button>("return-lobby-button");
-        backToLobby.clicked += OnReturnToLobbyClick;
+        backToLobby = root.Q<Button>("start-new-game-button");
+        backToLobby.clicked += StartNewGame;
 
         scoreText.text = "Score: " + GameManager.Instance.Score;
     }
@@ -27,9 +25,8 @@ public class GameOverUIHandler : MonoBehaviour
         
     }
 
-    public void OnReturnToLobbyClick()
+    public void StartNewGame()
     {
-        GameManager.Instance.Score = 0;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

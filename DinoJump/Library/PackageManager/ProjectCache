@@ -5,22 +5,22 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637820221609032966
-    m_Hash: 3115507569
+      ticks: 637822767776986315
+    m_Hash: 3297847044
   m_LockFileStatus:
     m_FilePath: F:/Documents/404DevOps/_UnityProjects/DinoJump/dino-jump/DinoJump/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637820221609362974
-    m_Hash: 111612439
+      ticks: 637822767777273651
+    m_Hash: 3925160794
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: F:/Documents/404DevOps/_UnityProjects/DinoJump/dino-jump/DinoJump/Packages
-m_EditorVersion: 2021.2.13f1 (90b6766da538)
+m_EditorVersion: 2021.2.14f1 (bcb93e5482d2)
 m_ResolvedPackages:
 - packageId: com.unity.2d.pixel-perfect@5.0.1
   testable: 0
@@ -95,6 +95,57 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 5.0.1
+    nextVersion: 
+- packageId: com.unity.2d.sprite@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: F:\Documents\404DevOps\_UnityProjects\DinoJump\dino-jump\DinoJump\Library\PackageCache\com.unity.2d.sprite@1.0.0
+  assetPath: Packages/com.unity.2d.sprite
+  name: com.unity.2d.sprite
+  displayName: 2D Sprite
+  author:
+    name: 
+    email: 
+    url: 
+  category: 2D
+  type: 
+  description: Use Unity Sprite Editor Window to create and edit Sprite asset properties
+    like pivot, borders and Physics shape
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    verified: 1.0.0
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - 2d
+  - sprite
+  - sprite editor window
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
     nextVersion: 
 - packageId: com.unity.collab-proxy@1.15.12
   testable: 0

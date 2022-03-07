@@ -3,113 +3,67 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private float spawnRange = 5.0f;//10.6f;
-
-    [SerializeField] private List<GameObject> platformPrefab;
-    [SerializeField] private GameObject GameOverText;
-    [SerializeField] private GameObject ScoreText;
-    [SerializeField] private GameObject DeathBox;
-    private int lastPlatformSpawned;
-
-    public static List<GameObject> PlayerList {get; private set;}
-
-    public static bool isGameActive;
     public static GameManager Instance { get; private set; }
-    private float spawnPosY = -4.0f;
-    private float score = 0f;
+    public float Score { get; private set;}
+    public bool isGameActive;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (Instance != null)
         {
             Destroy(this.gameObject);
         }
+        else 
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
+    void Update()
+    {
+        if (isGameActive)
+        {
+            UpdateScore();
+        }
+    }
+    public void NewGame()
+    {
+        Score = 0f;
         isGameActive = true;
-        Instance = this;
-
-        UpdatePlayerList();
-        SpawnPlatform();
-        
+        SceneManager.LoadScene(1);  
     }
 
     public void GameOver()
     {
         isGameActive = false;
-        GameOverText.SetActive(true);
-        //Show EndScreen
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        UpdatePlayerList();
-        SpawnPlatform();
-        UpdateScore();
+        SceneManager.LoadScene(2);
     }
 
     void UpdateScore()
     {
-        float pos = GetHighestPlayerPosition() + 4.0f;
+        float pos = GetHighestPosition(); //+ 4.0f;
         var currentHeight = pos * 10;
-        if (currentHeight > score)
+        if (currentHeight > Score)
         {
-            score = Mathf.Round( pos * 10);
+            Score = Mathf.Round( pos * 10);
         }
-        
-        ScoreText.GetComponent<Text>().text = "Score: " + score + "m";
     }
 
-    public float GetHighestPlayerPosition()
+    public float GetHighestPosition()
     {
-        if (PlayerList?.Count < 1)
+        var player = GameObject.Find("Player");
+        if (player != null)
+        {
+            return player.transform.position.y;
+        }
+        else
         {
             return 0;
-        }
-        else 
-        {
-            return PlayerList.Max(m => m.transform.position.y);
-        }
-    }
-
-    void UpdatePlayerList()
-    {
-        //empty the list to not get duplicates
-        PlayerList = new List<GameObject>();
-
-        //find all players
-        var list = FindObjectsOfType<PlayerController>();
-        foreach (var item in list)
-        {
-            //add to global list
-            PlayerList.Add(item.gameObject);
-        }
-        if (PlayerList?.Count < 1)
-        {
-            GameOver();
-        }
-    }
-
-    void SpawnPlatform()
-    {
-        if (PlayerList.Any(m => m.gameObject.transform.position.y > spawnPosY - 6))
-        {
-            spawnPosY += 2.0f;
-            float spawnPosX = Random.Range(-spawnRange, spawnRange);
-            int randomPlat = Random.Range(0, platformPrefab.Count);
-
-            while (randomPlat != 0 && randomPlat == lastPlatformSpawned)
-            {
-                randomPlat = Random.Range(0, platformPrefab.Count);
-            }
-            //Select Random Prefab from List
-            Instantiate(platformPrefab[randomPlat], new Vector2(spawnPosX, spawnPosY), platformPrefab[randomPlat].transform.rotation);
-
-            lastPlatformSpawned = randomPlat;
         }
     }
 }
